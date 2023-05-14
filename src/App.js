@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+import React,{useState} from 'react';
 import './App.css';
+import   './App.css';
+const App=()=>{
+    const[state,setState]=useState('');
+    const handleChange=(event)=>{
+      setState(event.target.value);
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return <>
+    <div className='container'>
+      <h2> Real Time Counter   </h2>
+      <textarea className='text-area' onChange={handleChange} ></textarea>
+      <div> 
+        <p className='counter' >   Character :{state.length} </p>
+      </div>
     </div>
-  );
+  </>
 }
-
 export default App;
